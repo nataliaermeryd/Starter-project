@@ -23,10 +23,12 @@ function App() {
     setEmojis(searchResult)
   }
 
+  const list = <div><Header /></div>
+
   return (
     <>
     <div className='navbar'>
-      <Header />
+      {list}
       <Search search={search}/>
       <SearchResult searchResult={emojis} />
     </div>
@@ -36,3 +38,12 @@ function App() {
 }
 
 export default App;
+
+const react = () => {
+
+  return react.createElement('div', {className: 'navbar'}, 
+  react.createElement(Header, null, null),
+  react.createElement(Search, {search: search}, null),
+  react.createElement(SearchResult, {searchResult: emojis}, null)
+  )
+}
